@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!--Custom dimensions-->
+    <dimen name="spinnerTextSize_dimension">25sp</dimen>
+    <dimen name="checkBoxTextSize_dimension">15sp</dimen>
+    <dimen name="regularTextSize_dimension">20sp</dimen>
+    <dimen name="extended_account_item_height">150sp</dimen>
+    <dimen name="marginTop_actionButtons">80sp</dimen>
+    <dimen name="marginLeft_text">8dp</dimen>
+    <dimen name="size_for_recyclerView_button">35sp</dimen>
+</resources>

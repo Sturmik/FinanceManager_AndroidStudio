@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_main_menu">
+
+    <fragment
+        android:id="@+id/nav_main_menu"
+        android:name="com.example.financemanager.ui.mainMenu.MainMenuFragment"
+        android:label="@string/menu_main_menu"
+        tools:layout="@layout/fragment_main_menu" />
+
+    <fragment
+        android:id="@+id/nav_journal"
+        android:name="com.example.financemanager.ui.journal.JournalFragment"
+        android:label="@string/menu_journal"
+        tools:layout="@layout/fragment_journal" />
+
+    <fragment
+        android:id="@+id/nav_account_control"
+        android:name="com.example.financemanager.ui.accountControl.AccountControlFragment"
+        android:label="@string/menu_account_control"
+        tools:layout="@layout/fragment_account_control" />
+</navigation>

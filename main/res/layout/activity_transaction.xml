@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.TransactionActivity">
+
+    <!--We add scroll view, for situations, where user has small screen-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+    <!--CardView of account we will work with-->
+    <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
+        android:id="@+id/account_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/extended_account_item_height">
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--Main info-->
+            <!--Account name-->
+            <TextView
+                android:id="@+id/accountName_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/regularTextSize_dimension"
+                android:textStyle="bold"/>
+            <!--Account balance-->
+            <TextView
+                android:id="@+id/accountValue_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/regularTextSize_dimension"
+                android:textStyle="bold"/>
+            <!--Description-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:scrollbars="vertical"
+                android:background="@color/primary_light">
+
+                <!--Account description-->
+                <TextView
+                    android:text="@string/description_dots_text_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/regularTextSize_dimension"
+                    android:layout_gravity="start"/>
+                <!--Account description text-->
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/accountDescription_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/marginLeft_text"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/regularTextSize_dimension"
+                    android:textStyle="bold"
+                    android:lines="@integer/visible_lines"
+                    android:maxLines="@integer/max_lines"/>
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <!--
+    Spinner for choosing type of transaction
+    It can be income or expense
+    -->
+    <RadioGroup
+        android:id="@+id/transactionType_switch_compat"
+        android:checkedButton="@+id/transactionType_switch_compat"
+        android:layout_margin="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_switch_outter_line"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/transactionType_switch_Income"
+            android:background="@drawable/custom_switch_widget_background"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:checked="true"
+            android:text="@string/transactionIncome_text" />
+
+        <RadioButton
+            android:id="@+id/transactionType_switch_Expense"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/custom_switch_widget_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/transactionExpense_text" />
+    </RadioGroup>
+            <!--Sum of the transaction-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/sum_dots_text_label"
+                    android:textSize="@dimen/regularTextSize_dimension"/>
+                <EditText
+                    android:id="@+id/transactionSum_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/marginLeft_text"
+                    android:textSize="@dimen/regularTextSize_dimension"
+                    android:maxLength="@integer/max_value_enter_size"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+    <!--Description of the transaction-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/comment_dots_text_label"
+        android:textSize="@dimen/regularTextSize_dimension"/>
+    <EditText
+        android:id="@+id/transactionComment_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/marginLeft_text"
+        android:textSize="@dimen/regularTextSize_dimension"
+        android:maxLength="@integer/comment_max_size"
+        android:inputType="textMultiLine"
+        android:lines="@integer/visible_lines"
+        android:maxLines="@integer/max_lines"/>
+    </LinearLayout>
+
+
+            <!--Action buttons-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/marginTop_actionButtons">
+                <!--Confirm button for transaction-->
+                <Button
+                    android:id="@+id/confirmTransaction_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirmation_text_label"
+                    android:onClick="confirmTransaction_click"/>
+                <!--Cancel button for transaction-->
+                <Button
+                    android:id="@+id/cancellationTransaction_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancellation_text_label"
+                    android:textColor="@color/red"
+                    android:onClick="cancelTransaction_click"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

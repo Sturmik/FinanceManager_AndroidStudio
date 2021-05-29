@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Account control fragment allows user to add new accounts and delete or modify existing ones-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/accountControl_linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.accountControl.AccountControlFragment">
+
+    <!--Linear layout holds info about accounts-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+        <!--Button for adding new accounts-->
+        <Button
+            android:id="@+id/addNewAccount_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center_vertical"
+            android:text="@string/addAccount_text"/>
+        <!--Recycler view which contains all accounts-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/extendedAccounts_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:listitem="@layout/recyclerview_account_item_extended"/>
+    </LinearLayout>
+
+</LinearLayout>

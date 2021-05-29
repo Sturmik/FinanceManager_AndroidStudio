@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.financemanager">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_logo_2"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_logo_2"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FinanceManager">
+        <!-- Основная активность -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.FinanceManager.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Активность для транзакций -->
+        <activity
+            android:name=".activities.TransactionActivity"
+            android:label="@string/transaction_label"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.financemanager.MainActivity" />
+        </activity>
+        <!--Активность для создания или редактирования счетов-->
+        <activity
+            android:name=".activities.AccountEditActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.financemanager.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

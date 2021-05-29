@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Limits for data enter-->
+    <integer name="account_name_max_size">40</integer>
+    <integer name="description_max_size">120</integer>
+    <integer name="comment_max_size">120</integer>
+    <integer name="max_value_enter_size">20</integer>
+    <integer name="max_lines">4</integer>
+    <integer name="visible_lines">4</integer>
+</resources>

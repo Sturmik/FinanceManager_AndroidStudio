@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Layout for account object visualisation-->
+<androidx.cardview.widget.CardView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/primary_light">
+    <!--Account name-->
+    <TextView
+        android:id="@+id/accountName_item_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="@dimen/regularTextSize_dimension"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:layout_weight="1"/>
+    <!--Account balance-->
+    <TextView
+        android:id="@+id/accountValue_item_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="@dimen/regularTextSize_dimension"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:layout_gravity="right"/>
+</LinearLayout>
+</androidx.cardview.widget.CardView>

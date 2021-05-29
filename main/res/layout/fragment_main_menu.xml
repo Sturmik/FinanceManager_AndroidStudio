@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Main menu fragment holds basic information and quick access for all users accounts-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainMenu_linearLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainMenu.MainMenuFragment">
+
+    <!--Linear layout holds info about sum of all accounts values-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/primary_light">
+        <!--Balance text-->
+        <TextView
+            android:id="@+id/overallBalance_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:textStyle="italic"
+            android:text="@string/overall_balance_text_label"
+            android:textSize="@dimen/regularTextSize_dimension"
+            android:textColor="@color/primary_text" />
+        <!--Balance value-->
+        <TextView
+            android:id="@+id/overallBalanceValue_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="8dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/regularTextSize_dimension"
+            android:textColor="@color/primary_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </LinearLayout>
+    <!--Linear layout holds info about accounts-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+        <!--Recycler view which contains all accounts-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/accounts_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:listitem="@layout/recyclerview_account_item"/>
+    </LinearLayout>
+</LinearLayout>
